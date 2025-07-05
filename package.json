@@ -4,6 +4,10 @@
   "description": "Paste images from clipboard directly into image files",
   "version": "0.0.1",
   "publisher": "ideamans",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ideamans/vscode-image-paste.git"
+  },
   "engines": {
     "vscode": "^1.74.0"
   },

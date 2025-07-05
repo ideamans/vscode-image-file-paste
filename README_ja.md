@@ -30,7 +30,7 @@ Visual Studio Code で画像ファイルを編集中に、クリップボード�
 
 1. **リポジトリのクローン**
    ```bash
-   git clone https://github.com/yourusername/vscode-image-paste.git
+   git clone https://github.com/ideamans/vscode-image-paste.git
    cd vscode-image-paste
    ```
 

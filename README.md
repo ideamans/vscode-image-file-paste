@@ -30,7 +30,7 @@ A Visual Studio Code extension that allows you to paste images from clipboard di
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/vscode-image-paste.git
+   git clone https://github.com/ideamans/vscode-image-paste.git
    cd vscode-image-paste
    ```
 
