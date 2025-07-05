@@ -1,0 +1,71 @@
+{
+  "name": "vscode-image-paste",
+  "displayName": "Image Paste",
+  "description": "Paste images from clipboard directly into image files",
+  "version": "0.0.1",
+  "publisher": "ideamans",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:imagePaste.paste",
+    "onCommand:imagePaste.pasteWithResize"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "imagePaste.paste",
+        "title": "Paste Image"
+      },
+      {
+        "command": "imagePaste.pasteWithResize",
+        "title": "Paste Image with Resize"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "imagePaste.paste",
+        "key": "ctrl+v",
+        "mac": "cmd+v",
+        "when": "resourceExtname =~ /\\.(png|jpg|jpeg|gif|webp)$/i"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "imagePaste.pasteWithResize",
+          "when": "resourceExtname =~ /\\.(png|jpg|jpeg|gif|webp)$/i",
+          "group": "9_cutcopypaste"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.28.0",
+    "typescript": "^4.9.3",
+    "@vscode/test-electron": "^2.2.0",
+    "@types/mocha": "^10.0.1",
+    "@types/glob": "^8.0.0",
+    "mocha": "^10.1.0",
+    "glob": "^8.0.3"
+  },
+  "dependencies": {
+    "jimp": "^0.22.10"
+  }
+}
