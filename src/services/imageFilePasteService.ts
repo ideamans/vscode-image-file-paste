@@ -153,7 +153,9 @@ objShell.Run "powershell -Command ""Add-Type -AssemblyName System.Windows.Forms;
         // 一時ファイルが存在する場合は削除を試みる
         try {
           await fs.unlink(tempFile);
-        } catch {}
+        } catch {
+          // ファイル削除エラーは無視
+        }
         return null;
       }
     } catch (error) {
