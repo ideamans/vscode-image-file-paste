@@ -1,8 +1,8 @@
 {
   "name": "vscode-image-file-paste",
-  "displayName": "Image Paste",
+  "displayName": "Image File Paste",
   "description": "Paste images from clipboard directly into image files",
-  "version": "0.1.2",
+  "version": "0.1.7",
   "publisher": "ideamans",
   "repository": {
     "type": "git",
@@ -31,24 +31,23 @@
     "Visualization"
   ],
   "activationEvents": [
-    "onCommand:imagePaste.paste",
-    "onCommand:imagePaste.pasteWithResize"
+    "onLanguage:plaintext"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "imagePaste.paste",
+        "command": "imageFilePaste.paste",
         "title": "Paste Image"
       },
       {
-        "command": "imagePaste.pasteWithResize",
+        "command": "imageFilePaste.pasteWithResize",
         "title": "Paste Image with Resize"
       }
     ],
     "keybindings": [
       {
-        "command": "imagePaste.paste",
+        "command": "imageFilePaste.paste",
         "key": "ctrl+v",
         "mac": "cmd+v",
         "when": "resourceExtname =~ /\\.(png|jpg|jpeg|gif|webp)$/i"
@@ -57,7 +56,7 @@
     "menus": {
       "editor/context": [
         {
-          "command": "imagePaste.pasteWithResize",
+          "command": "imageFilePaste.pasteWithResize",
           "when": "resourceExtname =~ /\\.(png|jpg|jpeg|gif|webp)$/i",
           "group": "9_cutcopypaste"
         }

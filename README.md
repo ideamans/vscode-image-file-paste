@@ -4,7 +4,7 @@ English | [日本語](README_ja.md)
 
 A Visual Studio Code extension that allows you to paste images from clipboard directly into image files being edited.
 
-![Demo](screencast.gif)
+![Demo](https://github.com/ideamans/vscode-image-file-paste/raw/main/screencast.gif)
 
 ## Features
 
@@ -31,12 +31,14 @@ A Visual Studio Code extension that allows you to paste images from clipboard di
 ### For First-time VS Code Extension Developers
 
 1. **Clone the repository**
+
    ```bash
-   git clone https://github.com/ideamans/vscode-image-paste.git
-   cd vscode-image-paste
+   git clone https://github.com/ideamans/vscode-image-file-paste.git
+   cd vscode-image-file-paste
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
@@ -63,12 +65,12 @@ A Visual Studio Code extension that allows you to paste images from clipboard di
 ### Project Structure
 
 ```
-vscode-image-paste/
+vscode-image-file-paste/
 ├── src/
 │   ├── extension.ts          # Main extension entry point
 │   ├── services/
-│   │   ├── imagePasteService.ts  # Image processing service
-│   │   └── imageHistory.ts       # History management service
+│   │   ├── imageFilePasteService.ts  # Image processing service
+│   │   └── imageFileHistory.ts       # History management service
 │   └── test/
 │       └── suite/            # Test files
 ├── package.json              # Extension manifest
@@ -81,6 +83,7 @@ vscode-image-paste/
 ### Local Installation
 
 1. **Package the extension**
+
    ```bash
    npm install -g vsce
    vsce package
