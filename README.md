@@ -4,6 +4,8 @@ English | [日本語](README_ja.md)
 
 A Visual Studio Code extension that allows you to paste images from clipboard directly into image files being edited.
 
+![Demo](screencast.gif)
+
 ## Features
 
 - 🖼️ **Direct Image Paste**: Paste images copied from other applications directly into open image files

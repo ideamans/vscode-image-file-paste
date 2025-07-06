@@ -10,7 +10,7 @@ suite('Extension Test Suite', () => {
     vscode.window.showInformationMessage('Start all tests.');
 
     test('拡張機能が読み込まれる', () => {
-        const extension = vscode.extensions.getExtension('your-publisher-name.vscode-image-paste');
+        const extension = vscode.extensions.getExtension('ideamans.vscode-image-file-paste');
         assert.strictEqual(extension !== undefined, true);
     });
 
