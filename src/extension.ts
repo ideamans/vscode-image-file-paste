@@ -40,8 +40,8 @@ export function activate(context: vscode.ExtensionContext) {
       const filePath = editor.document.fileName;
       const ext = path.extname(filePath).toLowerCase();
 
-      // 画像ファイルの場合は独自のUndo処理
-      if ([".png", ".jpg", ".jpeg", ".gif", ".webp"].includes(ext)) {
+      // 画像ファイルの場合は独自のUndo処理（JPEG/PNGのみ）
+      if ([".png", ".jpg", ".jpeg"].includes(ext)) {
         await handleUndo(imageFileHistory);
         return;
       }
@@ -102,9 +102,9 @@ async function handlePaste(
   const ext = path.extname(filePath).toLowerCase();
   console.log("File path:", filePath, "Extension:", ext);
 
-  // 画像ファイルかチェック
-  if (![".png", ".jpg", ".jpeg", ".gif", ".webp"].includes(ext)) {
-    console.log("Not an image file");
+  // 画像ファイルかチェック（JPEG/PNGのみ）
+  if (![".png", ".jpg", ".jpeg"].includes(ext)) {
+    console.log("Not a supported image file (only PNG/JPEG supported)");
     return;
   }
 
@@ -207,9 +207,9 @@ async function handleUndo(imageFileHistory: ImageFileHistory) {
 
   const ext = path.extname(filePath).toLowerCase();
 
-  // 画像ファイルかチェック
-  if (![".png", ".jpg", ".jpeg", ".gif", ".webp"].includes(ext)) {
-    vscode.window.showWarningMessage("Not an image file");
+  // 画像ファイルかチェック（JPEG/PNGのみ）
+  if (![".png", ".jpg", ".jpeg"].includes(ext)) {
+    vscode.window.showWarningMessage("Not a supported image file (only PNG/JPEG supported)");
     return;
   }
 
